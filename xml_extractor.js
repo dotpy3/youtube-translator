@@ -1,6 +1,6 @@
 function fetch_transcript(language, video_identifier) {
     var xml = null
-    var languages = ['zh', 'jp', 'ja', 'ko', 'kr', 'es', 'fr', 'de', 'nl', 'en']
+    var languages = ['cn', 'zh', 'jp', 'ja', 'ko', 'kr', 'es', 'fr', 'de', 'nl', 'en']
     for (var i = 0; i < languages.length; i++) {
         language = languages[i]
         xml = xml_extractor_http_get(language, video_identifier)
