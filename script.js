@@ -1,13 +1,12 @@
-alert("HELLO WORLD!!!!")
+console.log("Youtube video detected, YouTube translator enabled 😈")
 
-var button = document.getElementById('button')
-if (!button) {
-  alert("WOW NO RESULT FOUND")
+var url = new URL(document.URL)
+var c = url.searchParams.get("v")
+if (!c) {
+  alert("Wow, YouTube video identifier not found 😭")
+} else {
+  play(c)
 }
-
-button.addEventListener('click', () => {
-  play('ePpPVE-GGJw')
-})
 
 function play(video_identifier) {
     fetch_transcript('en', video_identifier);
