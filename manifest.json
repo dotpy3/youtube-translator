@@ -18,7 +18,8 @@
         "xml_extractor.js",
         "translator.js",
         "player.js",
-        "script.js"
+        "script.js",
+        "yt_eventer.js"
       ]
     }
   ],
