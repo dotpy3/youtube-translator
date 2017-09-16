@@ -16,10 +16,7 @@ function fetch_transcript(video_identifier) {
         var duration = childNode.getAttribute('dur')
         var text = childNode.textContent
         console.log(text)
-        // text = decodeURIComponent(text)
-        // for (var i = 0; i < 5; i++) {
-        //     text = text.replace('&#39;', '\'')
-        // }
+        text = decodeURI(text)
         console.log(text)
         var translated_text = translate(text, language, userLanguageInTwoCharacters())
         play_line(start_time, duration, translated_text)

@@ -1,4 +1,5 @@
 function userLanguageInFiveCharacters() {
+  return 'nl-NL'
   return window.navigator.language
 }
 
