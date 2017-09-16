@@ -4,6 +4,8 @@ var url = new URL(document.URL)
 var c = url.searchParams.get("v")
 if (!c) {
   alert("Wow, YouTube video identifier not found 😭")
+} else if (!!document.URL.match(/^file/g)) {
+  alert("Debug mode detected ⚠️")
 } else {
   play(c)
 }
