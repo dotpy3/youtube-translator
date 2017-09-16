@@ -1,5 +1,7 @@
+alert("hello")
+
 function fetch_transcript(language, video_identifier) {
-    var url = "http://video.google.com/timedtext?lang=" + language + "&v=" + video_identifier
+    var url = "https://video.google.com/timedtext?lang=" + language + "&v=" + video_identifier
     var request = new XMLHttpRequest();
     request.open("GET", url, false);
     request.send();
