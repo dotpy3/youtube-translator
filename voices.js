@@ -12,13 +12,12 @@ var synth = window.speechSynthesis
 var voices = synth.getVoices()
 
 function Speak(languageInFiveCharacters, text) {
-  for (var voiceIndex in voices) {
-    var voice = voices[voiceIndex]
+  voices.forEach(voice => {
     console.log("speak in " + languageInFiveCharacters + ": " + text)
     if (voice.lang === languageInFiveCharacters) {
       var utterance = new SpeechSynthesisUtterance(text)
       utterance.voice = voice
       synth.speak(utterance)
     }
-  }
+  })
 }
