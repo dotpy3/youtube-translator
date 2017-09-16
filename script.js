@@ -12,17 +12,19 @@ if (!!document.URL.match(/file/g)) {
     play(c)
 }
 
-document.getElementById('button').addEventListener('click', () => {
+var button = document.getElementById('button')
+
+if (!!button) {
+  button.addEventListener('click', () => {
     var content = document.getElementById('videoid').value
     if (content == '') {
         content = 'ePpPVE-GGJw'
     }
     console.log('Playing ' + content + '...')
     play(content)
-})
+  })
+}
 
 function play(video_identifier) {
     fetch_transcript('en', video_identifier)
 }
-
-responsiveVoice.init()

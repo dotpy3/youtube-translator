@@ -9,15 +9,29 @@ function userLanguageInTwoCharacters() {
 }
 
 var synth = window.speechSynthesis
-var voices = synth.getVoices()
+var voices = []
 
 function Speak(languageInFiveCharacters, text) {
-  voices.forEach(voice => {
+  for (var i = 0; i < voices.length; i++) {
+    var voice = voices[i]
     console.log("speak in " + languageInFiveCharacters + ": " + text)
     if (voice.lang === languageInFiveCharacters) {
       var utterance = new SpeechSynthesisUtterance(text)
       utterance.voice = voice
       synth.speak(utterance)
+      return
     }
+  }
+}
+setInterval(1500, function() {
+  Speak("fr-FR", "Bonjour")
+  console.log("Said bonjour")
+})
+console.log("Speak defined")
+
+window.speechSynthesis.onvoiceschanged = function () {
+  console.log("⚠️ voices have loaded")
+  window.speechSynthesis.getVoices().forEach(function(voice) {
+    voices.push(voice)
   })
 }

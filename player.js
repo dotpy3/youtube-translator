@@ -3,9 +3,8 @@ function play_line(start, dur, text) {
 }
 
 function add_video_action(time, text) {
-    time = time - 42
-    // AddVideoAction(time, () => {
+    AddVideoAction(time, () => {
       console.log(time, text)
       Speak(userLanguageInFiveCharacters(), text)
-    // })
+    })
 }
