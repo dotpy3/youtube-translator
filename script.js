@@ -23,7 +23,5 @@ play(content)
 
 function play(video_identifier) {
     console.log('PLAY')
-    // fetch_transcript('en', video_identifier)
-    var translated_text = translate('Hello world', 'en', 'es')
-    console.log(translated_text)
+    fetch_transcript('en', video_identifier)
 }
