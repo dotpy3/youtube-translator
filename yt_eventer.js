@@ -63,4 +63,5 @@ function attachEventListener(player) {
 
 if (!!player) {
   attachEventListener(player)
+  player.volume = 0.25
 }
