@@ -6,7 +6,7 @@ function fetch_transcript(language, video_identifier) {
         var start_time = childNode.getAttribute('start')
         var duration = childNode.getAttribute('dur')
         var text = childNode.textContent
-        var translated_text = translate(text, language, 'es')
+        var translated_text = translate(text, language, 'fr')
         play_line(start_time, duration, translated_text)
     }
 }

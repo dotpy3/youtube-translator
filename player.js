@@ -1,3 +1,9 @@
 function play_line(start, dur, text) {
-    console.log(text)
+    add_video_action(start, text)
+}
+
+function add_video_action(time, text) {
+    AddVideoAction(time, () => {
+      console.log(text)
+    })
 }
