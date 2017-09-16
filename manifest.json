@@ -10,7 +10,7 @@
   "content_scripts": [
     {
       "matches": ["*://youtube.com/watch*", "*://www.youtube.com/watch*"],
-      "js": ["script.js", "responsivevoice.js", "xml_extractor.js", "player.js"]
+      "js": ["script.js", "responsivevoice.js", "xml_extractor.js", "translator.js", "player.js"]
     }
   ],
   "browser_action": {
