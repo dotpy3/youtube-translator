@@ -12,14 +12,24 @@ var languageToVoice = {
 }
 
 function userLanguage() {
-  var firstLetters = window.navigator.language.match(/^.{2}/g)
-  if (!firstLetters) {
-    return "en"
-  }
+  return window.navigator.language
+}
 
-  if (firstLetters[0] in languageToVoice) {
-    return firstLetters[0]
+function userLanguageForTranslator() {
+  var lang = userLanguage()
+  var twoCharacters = lang.match(/^.{2}/g)[0]
+  return twoCharacters
+}
+
+var synth = window.speechSynthesis
+var voices = synth.getVoices()
+
+function Speak(language, text) {
+  for (var voice of voices) {
+    if (voice.lang === language) {
+      var utterance = new SpeechSynthesisUtterance(text)
+      utterance.voice = voice
+      synth.speak(utterance)
+    }
   }
-  
-  return "en"
 }

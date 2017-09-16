@@ -24,3 +24,5 @@ document.getElementById('button').addEventListener('click', () => {
 function play(video_identifier) {
     fetch_transcript('en', video_identifier)
 }
+
+responsiveVoice.init()
