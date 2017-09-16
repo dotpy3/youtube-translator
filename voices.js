@@ -13,8 +13,13 @@ var languageToVoice = {
 
 function userLanguage() {
   var firstLetters = window.navigator.language.match(/^.{2}/g)
-  if (!!firstLetters) {
+  if (!firstLetters) {
+    return "en"
+  }
+
+  if (firstLetters[0] in languageToVoice) {
     return firstLetters[0]
   }
+  
   return "en"
 }
