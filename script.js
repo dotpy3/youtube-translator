@@ -8,7 +8,7 @@ if (!!document.URL.match(/file/g)) {
     alert('Wow, YouTube video identifier not found 😭')
     console.log(document.URL)
 } else {
-    console.log('Youtube Video ' + c + 'detected')
+    console.log('Youtube Video ' + c + ' detected')
     play(c)
 }
 
