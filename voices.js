@@ -10,3 +10,11 @@ var languageToVoice = {
   ru: "Russian Female",
   se: "Swedish Female",
 }
+
+function userLanguage() {
+  var firstLetters = window.navigator.language.match(/^.{2}/g)
+  if (!!firstLetters) {
+    return firstLetters[0]
+  }
+  return "en"
+}
