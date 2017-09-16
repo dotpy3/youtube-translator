@@ -9,8 +9,7 @@
   ],
   "content_scripts": [
     {
-      "matches": "<all_urls>",
-      "js": ["script.js"]
+      "js": ["script.js", "responsivevoice.js"]
     }
   ],
   "browser_action": {
