@@ -9,7 +9,7 @@ if (!c) {
 }
 
 function play(video_identifier) {
-    fetch_transcript('en', video_identifier);
+    fetch_transcript('en', video_identifier)
     // play_sentence(video_identifier)
 }
 
