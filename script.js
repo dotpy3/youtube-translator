@@ -1,4 +1,4 @@
-
+alert("HELLO WORLD!!!!")
 
 var button = document.getElementById('button')
 if (!button) {
