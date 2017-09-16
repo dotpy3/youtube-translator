@@ -14,6 +14,9 @@ if (!!document.URL.match(/file/g)) {
 
 document.getElementById('button').addEventListener('click', () => {
     var content = document.getElementById('videoid').value
+    if (content == '') {
+        content = 'ePpPVE-GGJw'
+    }
     console.log('Playing ' + content + '...')
     play(content)
 })
