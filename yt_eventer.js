@@ -1,9 +1,5 @@
 var player = document.getElementsByTagName("video")[0]
 
-if (!!player) {
-  attachEventListener(player)
-}
-
 var funcsToExecute = []
 var functionsMarkers = []
 
@@ -33,11 +29,14 @@ function videoPlaying() {
   return true
 }
 
-var playerReadiness = event => {
+function playerReadiness () {
   var currentTimestamp = event.target.currentTime
+  console.log("Re-adding functions...")
+  console.log(`${funcsToExecute.length} functions to re-add`)
   funcsToExecute.forEach(funcToExecute => {
     if (funcToExecute.timing > currentTimestamp) {
       var timeBeforeExecution = (funcToExecute.timing - currentTimestamp) * 1000
+      console.log("Executing function in ", timeBeforeExecution, "ms")
       var functionMarker = setTimeout(funcToExecute.func, timeBeforeExecution)
       functionsMarkers.push(functionMarker)
     }
@@ -45,7 +44,7 @@ var playerReadiness = event => {
   console.log("Functions re-attached!")
 }
 
-var cancelAllFunctions = () => {
+function cancelAllFunctions() {
   functionsMarkers.forEach(marker => {
     clearTimeout(marker)
   })
@@ -55,8 +54,17 @@ var cancelAllFunctions = () => {
 
 function attachEventListener(player) {
   player.addEventListener('playing', playerReadiness)
+  player.addEventListener('playing', () => { console.log('video playing') })
   player.addEventListener('pause', cancelAllFunctions)
+  player.addEventListener('pause', () => { console.log('video paused') })
   player.addEventListener('ended', cancelAllFunctions)
+  player.addEventListener('ended', () => { console.log('video ended') })
 }
 
-AddVideoAction(4, () => {alert("hello world")})
+if (!!player) {
+  attachEventListener(player)
+}
+
+AddVideoAction(4, () => {
+  alert("Hello world")
+})
