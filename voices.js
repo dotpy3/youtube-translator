@@ -23,10 +23,6 @@ function Speak(languageInFiveCharacters, text) {
     }
   }
 }
-setInterval(1500, function() {
-  Speak("fr-FR", "Bonjour")
-  console.log("Said bonjour")
-})
 console.log("Speak defined")
 
 window.speechSynthesis.onvoiceschanged = function () {
