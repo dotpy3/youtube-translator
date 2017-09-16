@@ -1,5 +1,5 @@
 function fetch_transcript(language, video_identifier) {
-    var xml = httpGet(language, video_identifier)
+    var xml = xml_extractor_http_get(language, video_identifier)
     var transcript = xml.getElementsByTagName('transcript')[0]
     for (var i = 0; i < transcript.childNodes.length; i++) {
         var childNode = transcript.childNodes[i]
@@ -11,7 +11,7 @@ function fetch_transcript(language, video_identifier) {
     }
 }
 
-function httpGet(language, video_identifier) {
+function xml_extractor_http_get(language, video_identifier) {
     var url = "https://video.google.com/timedtext?lang=" + language + "&v=" + video_identifier
     var request = new XMLHttpRequest();
     request.open("GET", url, false);
