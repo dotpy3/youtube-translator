@@ -15,6 +15,7 @@
       ],
       "js": [
         "responsivevoice.js",
+        "voices.js",
         "xml_extractor.js",
         "translator.js",
         "player.js",
