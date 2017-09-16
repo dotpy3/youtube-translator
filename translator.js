@@ -5,7 +5,7 @@ function translate(text, source_language, destination_language) {
     var url = base_url + "?key=" + api_key + "&text=" + text + "&lang=" + source_language + "-" + destination_language
     url = encodeURI(url)
     var response = httpGet(url)
-    translated_text = response.text[0]
+    var translated_text = response.text[0]
     return translated_text
 }
 
