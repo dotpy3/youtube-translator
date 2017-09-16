@@ -19,3 +19,4 @@ function play(video_identifier) {
 function play_sentence(text) {
     document.write(text + "\n")
     responsiveVoice.speak(text)
+}
