@@ -3,14 +3,9 @@ function play_line(start, dur, text) {
 }
 
 function add_video_action(time, text) {
-    console.log(time, text)
     time = time - 42
-    console.log(time, text)
     // AddVideoAction(time, () => {
-    //   console.log(text)
-    //   responsiveVoice.speak(text)
-// })
-    var language = userLanguage()
-    var voice = languageToVoice[language]
-    responsiveVoice.speak(text, voice)
+      console.log(time, text)
+      Speak(userLanguageInFiveCharacters(), text)
+    // })
 }

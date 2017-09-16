@@ -3,7 +3,7 @@ function userLanguageInFiveCharacters() {
 }
 
 function userLanguageInTwoCharacters() {
-  var lang = userLanguage()
+  var lang = userLanguageInFiveCharacters()
   var twoCharacters = lang.match(/^.{2}/g)[0]
   return twoCharacters
 }
@@ -14,6 +14,7 @@ var voices = synth.getVoices()
 function Speak(languageInFiveCharacters, text) {
   for (var voiceIndex in voices) {
     var voice = voices[voiceIndex]
+    console.log("speak in " + languageInFiveCharacters + ": " + text)
     if (voice.lang === languageInFiveCharacters) {
       var utterance = new SpeechSynthesisUtterance(text)
       utterance.voice = voice
