@@ -1,8 +1,8 @@
-function fetch_transcript(language, video_identifier) {
+function fetch_transcript(video_identifier) {
     var xml = null
-    var languages = ['zh', 'ja', 'ko', 'es', 'fr', 'de', 'nl', 'en']
+    var languages = ['en', 'zh', 'ja', 'ko', 'es', 'fr', 'de', 'nl']
     for (var i = 0; i < languages.length; i++) {
-        language = languages[i]
+        var language = languages[i]
         xml = xml_extractor_http_get(language, video_identifier)
         if (xml !== null) {
             break
@@ -15,6 +15,12 @@ function fetch_transcript(language, video_identifier) {
         var start_time = childNode.getAttribute('start')
         var duration = childNode.getAttribute('dur')
         var text = childNode.textContent
+        console.log(text)
+        // text = decodeURIComponent(text)
+        // for (var i = 0; i < 5; i++) {
+        //     text = text.replace('&#39;', '\'')
+        // }
+        console.log(text)
         var translated_text = translate(text, language, userLanguageInTwoCharacters())
         play_line(start_time, duration, translated_text)
     }

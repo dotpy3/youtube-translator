@@ -26,5 +26,5 @@ if (!!button) {
 }
 
 function play(video_identifier) {
-    fetch_transcript('en', video_identifier)
+    fetch_transcript(video_identifier)
 }
