@@ -3,7 +3,8 @@ console.log("Youtube video detected, YouTube translator enabled 😈")
 var url = new URL(document.URL)
 var c = url.searchParams.get("v")
 if (!!document.URL.match(/file/g)) {
- alert("Debug mode detected ⚠️")
+ // alert("Debug mode detected ⚠️")
+    console.log("Debug mode detected ⚠️")
 } else if (!c) {
   alert("Wow, YouTube video identifier not found 😭")
   console.log(document.URL)
@@ -19,13 +20,7 @@ document.getElementById("button").addEventListener("click", () => {
 })
 
 function play(video_identifier) {
+    console.log('PLAY')
     fetch_transcript('en', video_identifier)
-    // play_sentence(video_identifier)
-}
-
-
-
-function play_sentence(text) {
-    document.write(text + "\n")
-    responsiveVoice.speak(text)
+    translate()
 }
