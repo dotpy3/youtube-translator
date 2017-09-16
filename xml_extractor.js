@@ -4,6 +4,7 @@ function fetch_transcript(language, video_identifier) {
     request.open("GET", url, false);
     request.send();
     var xml = request.responseXML;
+    console.log(xml)
     var transcript = xml.getElementsByTagName('transcript')[0]
     for (var i = 0; i < transcript.childNodes.length; i++) {
         var childNode = transcript.childNodes[i]
