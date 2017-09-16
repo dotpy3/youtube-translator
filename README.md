@@ -8,9 +8,10 @@ Created by:
 
 ## How to install
 
++ Download the repository on your disk
 + Go to `chrome://extensions`
 + Check the **Developer Mode** option
-+ Click on the **Load unpacked extension** button
++ Click on the **Load unpacked extension** button, select `youtube-translator` directory
 + Go to any YouTube video that has subtitles
 + ???
 + Profit!
