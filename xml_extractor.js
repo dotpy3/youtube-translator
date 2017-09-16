@@ -1,5 +1,14 @@
 function fetch_transcript(language, video_identifier) {
-    var xml = xml_extractor_http_get(language, video_identifier)
+    var xml = null
+    var languages = ['zh', 'ja', 'ko', 'es', 'fr', 'de', 'nl', 'en']
+    for (var i = 0; i < languages.length; i++) {
+        language = languages[i]
+        xml = xml_extractor_http_get(language, video_identifier)
+        if (xml !== null) {
+            break
+        }
+    }
+
     var transcript = xml.getElementsByTagName('transcript')[0]
     for (var i = 0; i < transcript.childNodes.length; i++) {
         var childNode = transcript.childNodes[i]
@@ -12,6 +21,7 @@ function fetch_transcript(language, video_identifier) {
 }
 
 function xml_extractor_http_get(language, video_identifier) {
+    console.log('Trying language ' + language)
     var url = "https://video.google.com/timedtext?lang=" + language + "&v=" + video_identifier
     var request = new XMLHttpRequest();
     request.open("GET", url, false);
