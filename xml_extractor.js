@@ -1,5 +1,3 @@
-alert("hello")
-
 function fetch_transcript(language, video_identifier) {
     var xml = httpGet(language, video_identifier)
     var transcript = xml.getElementsByTagName('transcript')[0]
