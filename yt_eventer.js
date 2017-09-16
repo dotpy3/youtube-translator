@@ -64,7 +64,3 @@ function attachEventListener(player) {
 if (!!player) {
   attachEventListener(player)
 }
-
-AddVideoAction(4, () => {
-  alert("Hello world")
-})
